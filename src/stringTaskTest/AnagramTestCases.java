@@ -10,6 +10,7 @@ public class AnagramTestCases {
         String s1 = "Donkey", s2 = "KeyNode";
         String expected = "Not Anagrams";
         String actualResult = StringTaskSolver.getAreAnagramsMessage(s1,s2);
+
         assertEquals(expected, actualResult);
     }
 
@@ -18,6 +19,7 @@ public class AnagramTestCases {
         String s1 = "eDonkey", s2 = "KeyNode";
         String expected = "Anagrams";
         String actualResult = StringTaskSolver.getAreAnagramsMessage(s1,s2);
+
         assertEquals(expected, actualResult);
     }
 

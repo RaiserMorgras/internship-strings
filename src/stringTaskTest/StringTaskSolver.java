@@ -1,6 +1,7 @@
 package stringTaskTest;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class StringTaskSolver {
     public StringTaskSolver() {}
@@ -36,26 +37,28 @@ public class StringTaskSolver {
         else {
             String s1_lowerCased = s1.toLowerCase(), s2_lowerCased = s2.toLowerCase();
             int len = s1_lowerCased.length();
-            HashMap<Character, Integer> s1_charFrequency = new HashMap<>();
-            HashMap<Character, Integer> s2_charFrequency = new HashMap<>();
-            char s1_charAtIndex, s2_charAtIndex;
+            Map<Character, Integer> s1charFrequency = new HashMap<>();
+            Map<Character, Integer> s2charFrequency = new HashMap<>();
+            char s1charAtIndex, s2charAtIndex;
+
             for (int i = 0; i < len; i++) {
-                s1_charAtIndex = s1_lowerCased.charAt(i);
-                s2_charAtIndex = s2_lowerCased.charAt(i);
-                if (!s1_charFrequency.containsKey(s1_charAtIndex)) {
-                    s1_charFrequency.put(s1_charAtIndex,1);
+                s1charAtIndex = s1_lowerCased.charAt(i);
+                s2charAtIndex = s2_lowerCased.charAt(i);
+
+                if (!s1charFrequency.containsKey(s1charAtIndex)) {
+                    s1charFrequency.put(s1charAtIndex,1);
                 }
                 else {
-                    s1_charFrequency.replace(s1_charAtIndex,s1_charFrequency.get(s1_charAtIndex)+1);
+                    s1charFrequency.replace(s1charAtIndex,s1charFrequency.get(s1charAtIndex)+1);
                 }
-                if (!s2_charFrequency.containsKey(s2_charAtIndex)) {
-                    s2_charFrequency.put(s2_charAtIndex,1);
+                if (!s2charFrequency.containsKey(s2charAtIndex)) {
+                    s2charFrequency.put(s2charAtIndex,1);
                 }
                 else {
-                    s2_charFrequency.replace(s2_charAtIndex,s2_charFrequency.get(s2_charAtIndex)+1);
+                    s2charFrequency.replace(s2charAtIndex,s2charFrequency.get(s2charAtIndex)+1);
                 }
             }
-            return s1_charFrequency.equals(s2_charFrequency);
+            return s1charFrequency.equals(s2charFrequency);
         }
     }
 }
